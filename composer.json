@@ -1,6 +1,6 @@
 {
   "name": "faithcatholic/faith_genesis_theme",
-  "type": "drupal-module",
+  "type": "drupal-theme",
   "description": "Core theme for Faith Genesis platform.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
