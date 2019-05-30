@@ -1,0 +1,14 @@
+{
+  "name": "faithcatholic/faith_genesis_theme",
+  "type": "drupal-module",
+  "description": "Core theme for Faith Genesis platform.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/faith_genesis_theme",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/faith_genesis_theme",
+    "source": "http://cgit.drupalcode.org/faith_genesis_theme"
+  },
+  "require": { }
+}
