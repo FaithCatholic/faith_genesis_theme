@@ -1,0 +1,47 @@
+// Default variables.
+@import "default-variables";
+
+// Bootstrap Framework.
+@import '../bootstrap/assets/stylesheets/bootstrap';
+
+// Base-theme overrides.
+@import 'overrides';
+
+.navbar {
+  min-height: auto;
+}
+
+.we-mega-menu-ul {
+  &>.we-mega-menu-li {
+    &>a {
+      font-size: inherit;
+    }
+  }
+}
+
+.we-mega-menu-submenu {
+  li {
+    &.we-mega-menu-li {
+      a {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+// .dialog-off-canvas-main-canvas.js-settings-tray-edit-mode ul.tabs {
+//   list-style: none;
+// }
+
+.dialog-off-canvas-main-canvas.js-settings-tray-edit-mode a,
+.dialog-off-canvas-main-canvas.js-settings-tray-edit-mode input {
+  pointer-events: auto;
+}
+
+.quickedit-form {
+  max-width: none;
+}
