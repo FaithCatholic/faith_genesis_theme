@@ -1,5 +1,5 @@
 {
-  "name": "faith_genesis",
+  "name": "faith_genesis_theme",
   "version": "1.0.0",
   "description": "<!-- @file Instructions for subtheming using the Sass Starterkit. --> <!-- @defgroup sub_theming_sass --> <!-- @ingroup sub_theming --> # Sass Starterkit",
   "main": "gulpfile.js",

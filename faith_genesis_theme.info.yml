@@ -19,4 +19,4 @@ regions:
   page_bottom: 'Page bottom'
 
 libraries:
-  - faith_genesis/framework
+  - faith_genesis_theme/framework
