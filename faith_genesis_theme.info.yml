@@ -17,6 +17,8 @@ regions:
   footer: 'Footer'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
+  banner: 'Banner'
+  subfooter: 'Subfooter'
 
 libraries:
   - faith_genesis_theme/framework
