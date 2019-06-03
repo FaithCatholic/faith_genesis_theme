@@ -47,26 +47,18 @@
   ]
 %}
 
-{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
-
-{% set txtcolor = content.field_txtcolor.0 ? content.field_txtcolor.0 : '#000000' %}
-{% set bgcolor = content.field_bgcolor.0 ? content.field_bgcolor.0 : '#FFFFFF' %}
-{% set bgimage = content.field_bgimage.0 ? file_url(content.field_bgimage[0]['#media'].field_media_image.entity.uri.value) : '' %}
+{% set bgimage = content.field_image.0 ? file_url(content.field_image[0]['#media'].field_media_image.entity.uri.value) : '' %}
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }} style="
-    {% if txtcolor %}color: {{ txtcolor }};{% endif %}
-    {% if bgcolor %}background-color: {{ bgcolor }};{% endif %}
     {% if bgimage %}
       background-image: url('{{ bgimage }}');
       background-position: 50% 50%;
       background-size: cover;
     {% endif %}
   ">
-    <div class="wrap {{ container }}">
-      {% block content %}
-        {{ content.field_paragraphs }}
-      {% endblock %}
-    </div>
+    {% block content %}
+      {{ content|without('field_image') }}
+    {% endblock %}
   </div>
 {% endblock paragraph %}

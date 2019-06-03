@@ -8,7 +8,7 @@ description: 'A bootstrap subtheme.'
 regions:
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
-  header: 'Top Bar'
+  header: 'Header'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
@@ -19,6 +19,7 @@ regions:
   page_bottom: 'Page bottom'
   banner: 'Banner'
   subfooter: 'Subfooter'
+  top_bar: 'Top bar'
 
 libraries:
   - faith_genesis_theme/framework

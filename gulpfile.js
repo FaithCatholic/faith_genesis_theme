@@ -61,9 +61,9 @@ gulp.task('sass', function () {
 // Type "gulp" in the cli to watch
 gulp.task('default', function(){
   livereload.listen();
-    gulp.watch('./scss/**/*.scss', ['sass']);
-    gulp.watch('./js/*.js', ['uglify']);
-    gulp.watch('./fonts.list', ['fonts']);
+    gulp.watch('./scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('./js/*.js', gulp.series('uglify'));
+    gulp.watch('./fonts.list', gulp.series('fonts'));
     gulp.watch(['./css/style.css', './**/*.twig', './scripts/*.js'], function (files){
       livereload.changed(files)
     });
