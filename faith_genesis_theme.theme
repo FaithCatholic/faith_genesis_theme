@@ -8,5 +8,9 @@ function faith_genesis_theme_theme_suggestions_page_alter(array &$suggestions, a
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $content_type = $node->bundle();
     $suggestions[] = 'page__'.$content_type;
+
+    if (\Drupal::service('path.matcher')->isFrontPage()) {
+      $suggestions[] = 'page__'.$content_type.'__front';
+    }
   }
 }
