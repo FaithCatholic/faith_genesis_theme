@@ -15,8 +15,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.5",
     "cross-env": "^5.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-google-webfonts": "^2.1.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uncss": "^1.0.6",
     "laravel-mix": "^4.0.15",
+    "node-sass-globbing": "0.0.23",
     "sass": "^1.20.1",
     "sass-loader": "7.*"
   }
