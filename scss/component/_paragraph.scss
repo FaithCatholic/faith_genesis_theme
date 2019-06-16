@@ -1,0 +1,79 @@
+// Section:default.
+.paragraph--type--section {
+  &.paragraph--view-mode--default {
+    padding: 100px 0;
+  }
+
+  &.paragraph--view-mode--deflated {
+    padding: 0;
+  }
+
+  &.paragraph--view-mode--inflated {
+    padding: 150px 0;
+  }
+}
+
+// Banner.
+.paragraph--type--banner {
+  .field-group--banner-content {
+    width: 100%;
+    z-index: 10;
+
+    .field--name-field-heading,
+    .field--name-field-subheading {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.paragraph--view-mode--default {
+    min-height: 500px;
+
+    .field-group--banner-content {
+      padding: 250px 0;
+    }
+  }
+
+  &.paragraph--view-mode--small {
+    min-height: 300px;
+
+    .field-group--banner-content {
+      padding: 150px 0;
+    }
+  }
+}
+
+// Cards.
+.paragraph--type--cards {
+  &.paragraph--view-mode--default {
+    margin: 0 -15px;
+  }
+}
+
+// Cards.
+.paragraph--type--cards {
+  &.paragraph--view-mode--default,
+  &.paragraph--view-mode--boxes {
+
+    .field--name-field-cards {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      // Card.
+      &>.field--item {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+}
+
+// Card.
+.paragraph--type--card {
+  &.paragraph--view-mode--box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
