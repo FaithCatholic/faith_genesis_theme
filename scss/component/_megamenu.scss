@@ -1,0 +1,17 @@
+.we-mega-menu-ul {
+  &>.we-mega-menu-li {
+    &>a {
+      font-size: inherit;
+    }
+  }
+}
+
+.we-mega-menu-submenu {
+  li {
+    &.we-mega-menu-li {
+      a {
+        font-size: inherit;
+      }
+    }
+  }
+}
