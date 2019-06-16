@@ -47,7 +47,6 @@
 .paragraph--type--cards {
   &.paragraph--view-mode--default,
   &.paragraph--view-mode--boxes {
-
     .field--name-field-cards {
       display: flex;
       flex-wrap: nowrap;
@@ -68,5 +67,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  &.paragraph--view-mode--image-left,
+  &.paragraph--view-mode--image-right {
+    & > .layout--twocol-section > .layout__region {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }

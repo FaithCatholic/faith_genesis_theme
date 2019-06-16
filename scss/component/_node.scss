@@ -1,0 +1,7 @@
+article.teaser {
+  & > .content > .layout > .layout__region {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
