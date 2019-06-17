@@ -3,3 +3,14 @@
 @import "component/megamenu";
 @import "component/navbar";
 @import "component/node";
+
+// Remove extra hz whitespace.
+.main-container>.row {
+  margin-left: 0;
+  margin-right: 0;
+
+  &>section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
