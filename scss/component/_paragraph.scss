@@ -11,6 +11,13 @@
   &.paragraph--view-mode--inflated {
     padding: 150px 0;
   }
+
+  &.paragraph--view-mode--fill-viewport {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
 }
 
 // Banner.
@@ -39,6 +46,18 @@
 
     .field-group--banner-content {
       padding: 150px 0;
+    }
+  }
+
+  &.paragraph--view-mode--fill-viewport {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 100px;
+
+    .field-group--banner-content {
+      display: flex;
+      flex-direction :column;
+      justify-content: center;
     }
   }
 }
