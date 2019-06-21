@@ -4,7 +4,7 @@
   "description": "<!-- @file Instructions for subtheming using the Sass Starterkit. --> <!-- @defgroup sub_theming_sass --> <!-- @ingroup sub_theming --> # Sass Starterkit",
   "main": "gulpfile.js",
   "scripts": {
-    "genesis-setup": "gulp fonts && gulp uglify && gulp sass"
+    "genesis-setup": "gulp uglify && gulp sass"
   },
   "keywords": [],
   "author": "",
