@@ -4,16 +4,20 @@
   "description": "<!-- @file Instructions for subtheming using the Sass Starterkit. --> <!-- @defgroup sub_theming_sass --> <!-- @ingroup sub_theming --> # Sass Starterkit",
   "main": "gulpfile.js",
   "scripts": {
-    "genesis-setup": "gulp fonts && gulp uglify && gulp sass"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "genesis-setup": "gulp uglify && gulp sass"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cross-env": "^5.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
-    "gulp-cssmin": "^0.2.0",
     "gulp-google-webfonts": "^2.1.0",
     "gulp-livereload": "^4.0.1",
     "gulp-plumber": "^1.2.1",
@@ -22,8 +26,6 @@
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uncss": "^1.0.6",
-    "node-sass-globbing": "0.0.23",
-    "sass": "^1.20.1",
-    "sass-loader": "7.*"
+    "node-sass-globbing": "0.0.23"
   }
 }
