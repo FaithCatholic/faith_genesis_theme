@@ -9,7 +9,6 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var stripCssComments = require('gulp-strip-css-comments');
 var uglify = require('gulp-uglify');
-var uncss = require('gulp-uncss');
 var googleWebFonts = require('gulp-google-webfonts');
 
 var sass_config = {
