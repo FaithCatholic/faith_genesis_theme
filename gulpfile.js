@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
-var cssmin = require('gulp-cssmin');
 var importer = require('node-sass-globbing');
 var livereload = require('gulp-livereload')
 var plumber = require('gulp-plumber');
