@@ -16,7 +16,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 66vh);
+    padding: 33vh 0;
   }
 }
 
@@ -52,7 +53,6 @@
   &.paragraph--view-mode--fill-viewport {
     display: flex;
     min-height: 100vh;
-    padding-top: 100px;
 
     .field-group--banner-content {
       display: flex;
