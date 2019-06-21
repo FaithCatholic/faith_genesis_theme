@@ -25,7 +25,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-uncss": "^1.0.6",
     "node-sass-globbing": "0.0.23"
   }
 }
