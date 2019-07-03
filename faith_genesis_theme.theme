@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\node\NodeInterface;
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
@@ -11,6 +13,34 @@ function faith_genesis_theme_theme_suggestions_page_alter(array &$suggestions, a
 
     if (\Drupal::service('path.matcher')->isFrontPage()) {
       $suggestions[] = 'page__'.$content_type.'__front';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function faith_genesis_theme_preprocess_html(&$variables) {
+  $variables['banner'] = 'landing-without-banner';
+
+  if (($node = \Drupal::routeMatch()->getParameter('node'))) {
+    if ($node instanceof NodeInterface) {
+      $variables['node_type'] = $node->getType();
+      if ($node->getType() === 'landing') {
+        /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+        if ($referenceItem = $node->get('field_paragraphs')->first()) {
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+          $entityReference = $referenceItem->get('entity');
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
+          $entityAdapter = $entityReference->getTarget();
+          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+          $referencedEntity = $entityAdapter->getValue();
+
+          if ($referencedEntity->getType() === 'banner') {
+            $variables['banner'] = 'landing-with-banner';
+          }
+        }
+      }
     }
   }
 }
