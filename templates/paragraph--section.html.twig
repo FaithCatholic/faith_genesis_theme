@@ -52,10 +52,10 @@
 {% set txtcolor = content.field_txtcolor.0 ? content.field_txtcolor.0 : '#000000' %}
 {% set bgcolor = content.field_bgcolor.0 ? content.field_bgcolor.0 : '#FFFFFF' %}
 {% set bgimage = content.field_bgimage.0 ? file_url(content.field_bgimage[0]['#media'].field_media_image.entity.uri.value) : '' %}
-
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }} style="
     {% if txtcolor %}color: {{ txtcolor }};{% endif %}
+    {% if txtcolor %}border-color: {{ txtcolor }};{% endif %}
     {% if bgcolor %}background-color: {{ bgcolor }};{% endif %}
     {% if bgimage %}
       background-image: url('{{ bgimage }}');
