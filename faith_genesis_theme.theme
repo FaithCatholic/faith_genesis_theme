@@ -27,17 +27,19 @@ function faith_genesis_theme_preprocess_html(&$variables) {
     if ($node instanceof NodeInterface) {
       $variables['node_type'] = $node->getType();
       if ($node->getType() === 'landing') {
-        /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
-        if ($referenceItem = $node->get('field_paragraphs')->first()) {
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
-          $entityReference = $referenceItem->get('entity');
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
-          $entityAdapter = $entityReference->getTarget();
-          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
-          $referencedEntity = $entityAdapter->getValue();
-
-          if ($referencedEntity->getType() === 'banner') {
-            $variables['banner'] = 'landing-with-banner';
+        $erl_sections = $node->get('field_erl_sections');
+        if ($referencedEntities = $erl_sections->referencedEntities()) {
+          $delta = 0;
+          foreach($referencedEntities as $referencedEntity) {
+            // Keep track of section orders.
+            if ($referencedEntity->getType() === 'erl_section') {
+              $delta++;
+            }
+            // If section is a banner, and is in the very first section.
+            if ($referencedEntity->getType() === 'banner' && $delta === 1) {
+              // dsm($referencedEntity);
+              $variables['banner'] = 'landing-with-banner';
+            }
           }
         }
       }
