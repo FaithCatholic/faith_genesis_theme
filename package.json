@@ -21,10 +21,14 @@
     "gulp-google-webfonts": "^2.1.0",
     "gulp-livereload": "^4.0.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-uglify": "^3.0.2",
     "node-sass-globbing": "0.0.23"
+  },
+    "dependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.53.0"
   }
 }
