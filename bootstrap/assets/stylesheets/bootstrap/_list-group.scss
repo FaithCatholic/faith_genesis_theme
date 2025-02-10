@@ -1,3 +1,7 @@
+@use "mixins/border-radius";
+@use "mixins/list-group";
+@use "variables";
+
 //
 // List groups
 // --------------------------------------------------
@@ -24,16 +28,16 @@
   padding: 10px 15px;
   // Place the border on the list items and negative margin up for better styling
   margin-bottom: -1px;
-  background-color: $list-group-bg;
-  border: 1px solid $list-group-border;
+  background-color: variables.$list-group-bg;
+  border: 1px solid variables.$list-group-border;
 
   // Round the first and last items
   &:first-child {
-    @include border-top-radius($list-group-border-radius);
+    @include border-radius.border-top-radius(variables.$list-group-border-radius);
   }
   &:last-child {
     margin-bottom: 0;
-    @include border-bottom-radius($list-group-border-radius);
+    @include border-radius.border-bottom-radius(variables.$list-group-border-radius);
   }
 }
 
@@ -45,18 +49,18 @@
 
 a.list-group-item,
 button.list-group-item {
-  color: $list-group-link-color;
+  color: variables.$list-group-link-color;
 
   .list-group-item-heading {
-    color: $list-group-link-heading-color;
+    color: variables.$list-group-link-heading-color;
   }
 
   // Hover state
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $list-group-link-hover-color;
-    background-color: $list-group-hover-bg;
+    color: variables.$list-group-link-hover-color;
+    background-color: variables.$list-group-hover-bg;
   }
 }
 
@@ -70,16 +74,16 @@ button.list-group-item {
   &.disabled,
   &.disabled:hover,
   &.disabled:focus {
-    background-color: $list-group-disabled-bg;
-    color: $list-group-disabled-color;
-    cursor: $cursor-disabled;
+    background-color: variables.$list-group-disabled-bg;
+    color: variables.$list-group-disabled-color;
+    cursor: variables.$cursor-disabled;
 
     // Force color to inherit for custom content
     .list-group-item-heading {
       color: inherit;
     }
     .list-group-item-text {
-      color: $list-group-disabled-text-color;
+      color: variables.$list-group-disabled-text-color;
     }
   }
 
@@ -88,9 +92,9 @@ button.list-group-item {
   &.active:hover,
   &.active:focus {
     z-index: 2; // Place active items above their siblings for proper border styling
-    color: $list-group-active-color;
-    background-color: $list-group-active-bg;
-    border-color: $list-group-active-border;
+    color: variables.$list-group-active-color;
+    background-color: variables.$list-group-active-bg;
+    border-color: variables.$list-group-active-border;
 
     // Force color to inherit for custom content
     .list-group-item-heading,
@@ -99,7 +103,7 @@ button.list-group-item {
       color: inherit;
     }
     .list-group-item-text {
-      color: $list-group-active-text-color;
+      color: variables.$list-group-active-text-color;
     }
   }
 }
@@ -110,10 +114,10 @@ button.list-group-item {
 // Add modifier classes to change text and background color on individual items.
 // Organizationally, this must come after the `:hover` states.
 
-@include list-group-item-variant(success, $state-success-bg, $state-success-text);
-@include list-group-item-variant(info, $state-info-bg, $state-info-text);
-@include list-group-item-variant(warning, $state-warning-bg, $state-warning-text);
-@include list-group-item-variant(danger, $state-danger-bg, $state-danger-text);
+@include list-group.list-group-item-variant(success, variables.$state-success-bg, variables.$state-success-text);
+@include list-group.list-group-item-variant(info, variables.$state-info-bg, variables.$state-info-text);
+@include list-group.list-group-item-variant(warning, variables.$state-warning-bg, variables.$state-warning-text);
+@include list-group.list-group-item-variant(danger, variables.$state-danger-bg, variables.$state-danger-text);
 
 
 // Custom content options

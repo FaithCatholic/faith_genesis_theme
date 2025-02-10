@@ -1,8 +1,8 @@
 // Default variables.
-@import "default-variables";
+@use "_default-variables";
 
 // Bootstrap Framework.
-@import '../bootstrap/assets/stylesheets/bootstrap';
+@use '../bootstrap/assets/stylesheets/bootstrap';
 
 // Base-theme overrides.
-@import 'overrides';
+@use 'overrides';

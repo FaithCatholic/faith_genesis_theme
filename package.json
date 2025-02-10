@@ -27,8 +27,7 @@
     "gulp-uglify": "^3.0.2",
     "node-sass-globbing": "0.0.23"
   },
-    "dependencies": {
-    "node-sass": "^9.0",
+  "dependencies": {
     "sass": "^1.53.0"
   }
 }

@@ -1,8 +1,8 @@
-@import "component/form";
-@import "component/paragraph";
-@import "component/megamenu";
-@import "component/navbar";
-@import "component/node";
+@use "component/form";
+@use "component/paragraph";
+@use "component/megamenu";
+@use "component/navbar";
+@use "component/node";
 
 // Remove extra hz whitespace.
 .main-container>.row {

@@ -1,3 +1,8 @@
+@use "mixins/clearfix";
+@use "mixins/opacity";
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 //
 // Modals
 // --------------------------------------------------
@@ -21,7 +26,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $zindex-modal;
+  z-index: variables.$zindex-modal;
   -webkit-overflow-scrolling: touch;
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
@@ -30,10 +35,10 @@
 
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
-    @include translate(0, -25%);
-    @include transition-transform(0.3s ease-out);
+    @include vendor-prefixes.translate(0, -25%);
+    @include vendor-prefixes.transition-transform(0.3s ease-out);
   }
-  &.in .modal-dialog { @include translate(0, 0) }
+  &.in .modal-dialog { @include vendor-prefixes.translate(0, 0) }
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -50,11 +55,11 @@
 // Actual modal
 .modal-content {
   position: relative;
-  background-color: $modal-content-bg;
-  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
-  border: 1px solid $modal-content-border-color;
-  border-radius: $border-radius-large;
-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-color: variables.$modal-content-bg;
+  border: 1px solid variables.$modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid variables.$modal-content-border-color;
+  border-radius: variables.$border-radius-large;
+  @include vendor-prefixes.box-shadow(0 3px 9px rgba(0,0,0,.5));
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
@@ -67,19 +72,19 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $zindex-modal-background;
-  background-color: $modal-backdrop-bg;
+  z-index: variables.$zindex-modal-background;
+  background-color: variables.$modal-backdrop-bg;
   // Fade for backdrop
-  &.fade { @include opacity(0); }
-  &.in { @include opacity($modal-backdrop-opacity); }
+  &.fade { @include opacity.opacity(0); }
+  &.in { @include opacity.opacity(variables.$modal-backdrop-opacity); }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
 .modal-header {
-  padding: $modal-title-padding;
-  border-bottom: 1px solid $modal-header-border-color;
-  @include clearfix;
+  padding: variables.$modal-title-padding;
+  border-bottom: 1px solid variables.$modal-header-border-color;
+  @include clearfix.clearfix;
 }
 // Close icon
 .modal-header .close {
@@ -89,22 +94,22 @@
 // Title text within header
 .modal-title {
   margin: 0;
-  line-height: $modal-title-line-height;
+  line-height: variables.$modal-title-line-height;
 }
 
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: $modal-inner-padding;
+  padding: variables.$modal-inner-padding;
 }
 
 // Footer (for actions)
 .modal-footer {
-  padding: $modal-inner-padding;
+  padding: variables.$modal-inner-padding;
   text-align: right; // right align buttons
-  border-top: 1px solid $modal-footer-border-color;
-  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+  border-top: 1px solid variables.$modal-footer-border-color;
+  @include clearfix.clearfix; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .btn + .btn {
@@ -131,20 +136,20 @@
 }
 
 // Scale up the modal
-@media (min-width: $screen-sm-min) {
+@media (min-width: variables.$screen-sm-min) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: $modal-md;
+    width: variables.$modal-md;
     margin: 30px auto;
   }
   .modal-content {
-    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+    @include vendor-prefixes.box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 
   // Modal sizes
-  .modal-sm { width: $modal-sm; }
+  .modal-sm { width: variables.$modal-sm; }
 }
 
-@media (min-width: $screen-md-min) {
-  .modal-lg { width: $modal-lg; }
+@media (min-width: variables.$screen-md-min) {
+  .modal-lg { width: variables.$modal-lg; }
 }
