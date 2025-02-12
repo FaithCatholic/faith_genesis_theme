@@ -10,7 +10,7 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "genesis-setup": "gulp uglify && gulp sass"
+    "genesis-setup": "gulp uglify && gulp sass && gulp fonts"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
-    "gulp-google-webfonts": "^2.1.0",
+    "gulp-google-webfonts": "^4.1.0",
     "gulp-livereload": "^4.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.0",
