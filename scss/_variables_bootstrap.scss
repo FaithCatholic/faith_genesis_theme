@@ -1,0 +1,42 @@
+// Bootstrap variables (overrides).
+$legend-font-size: 1rem;
+$table-cell-padding-x: .75rem;
+
+// Match Bootstrap 3: underline links on hover only.
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// Match Bootstrap 3's 14px base font size and line height.
+$font-size-base: .875rem;
+$line-height-base: 1.428571429;
+
+// Match Bootstrap 3's heading sizes and text spacing.
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.875rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.125rem;
+$h5-font-size: .875rem;
+$h6-font-size: .75rem;
+$headings-line-height: 1.5;
+$headings-margin-bottom: 10px;
+$paragraph-margin-bottom: 10px;
+
+// Carried over from the theme's customized Bootstrap 3 variables. Open Sans
+// isn't loaded, so most browsers fall back to Helvetica Neue, as on Bootstrap 3.
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Bootstrap 3 container widths (750/970/1170px at 768/992/1200px) and gutters.
+$container-max-widths: (
+  md: 750px,
+  lg: 970px,
+  xl: 1170px,
+  xxl: 1170px,
+);
+$grid-gutter-width: 30px;
+
+// Bootstrap 3 colors: primary/link blue, its hover shade (15% darker), and the
+// #333 body text.
+$primary: #337ab7;
+$link-color: #337ab7;
+$link-hover-color: #23527c;
+$body-color: #333;

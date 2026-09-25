@@ -10,5 +10,7 @@
     "issues": "https://www.drupal.org/project/issues/faith_genesis_theme",
     "source": "http://cgit.drupalcode.org/faith_genesis_theme"
   },
-  "require": { }
+  "require": {
+    "drupal/bootstrap5": "^4.0"
+  }
 }

@@ -17,12 +17,6 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('./fonts'));
 });
 
-// Move Bootstrap Fonts
-gulp.task('glyphs', function() {
-  return gulp.src('./bootstrap/assets/fonts/bootstrap/*.{ttf,woff,woff2,eot,svg}')
-    .pipe(gulp.dest('./fonts/bootstrap'));
-});
-
 // Minify JavaScript
 gulp.task('uglify', function() {
   return gulp.src('scripts/*.js')
@@ -35,7 +29,12 @@ gulp.task('sass', function () {
   return gulp.src('./scss/**/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    // Bootstrap 5.3 still uses @import and older Sass functions; hide those
+    // deprecation warnings so real errors stand out.
+    .pipe(sass({
+      quietDeps: true,
+      silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'mixed-decls', 'legacy-js-api'],
+    }).on('error', sass.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
       cascade: false

@@ -3,6 +3,8 @@
 @use "component/megamenu";
 @use "component/navbar";
 @use "component/node";
+// Imported rather than @use-d so it can use Bootstrap's variables and mixins.
+@import "component/search";
 
 // Remove extra hz whitespace.
 .main-container>.row {
@@ -12,5 +14,53 @@
   &>section {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+// The Bootstrap 3 base theme wrapped the secondary sidebar in a "well".
+// Bootstrap 5 dropped wells, so recreate the look.
+.region-sidebar-second {
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+// Bootstrap 5 headings have no top margin; Bootstrap 3's did. Element
+// selectors only, since blocks can carry .h1-.h6 classes on their wrappers.
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+}
+
+// Bootstrap 3's .page-header, which the old base theme put on the page title.
+.block-page-title-block h1 {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+// The Bootstrap 3 base theme added .clearfix to every block. Its
+// pseudo-elements keep heading margins inside the block, which gives blocks
+// their spacing, and make blocks clear floats (e.g. in the top bar). The page
+// title had no block wrapper on Bootstrap 3, so its margins stay collapsible.
+.block:not(.block-page-title-block) {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
   }
 }

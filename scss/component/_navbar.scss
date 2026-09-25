@@ -5,3 +5,61 @@
 .logo {
   width: 100px;
 }
+
+// The Bootstrap 3 base theme floated the logo left (.pull-left). The bootstrap5
+// branding block wraps it in a div, so float the block instead.
+.region-top-bar {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .block-system-branding-block {
+    float: left;
+  }
+
+  // The login blocks' paragraphs had no margin on Bootstrap 3; an empty one
+  // otherwise pushes the whole bar down.
+  p {
+    margin-bottom: 0;
+  }
+
+  // The Bootstrap 3 base theme didn't style Drupal's .button class, so the
+  // "Login with Microsoft 365" button showed as a plain link. bootstrap5 makes
+  // it a solid button; keep it a link.
+  a.button.button--primary {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--bs-link-color);
+    font-size: inherit;
+    line-height: inherit;
+    // bootstrap5's .button margin rule loads after the m365_login Asset
+    // Injector CSS and cancels its margins, so restore them here.
+    margin: 20px 30px 0 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: none;
+      color: var(--bs-link-hover-color);
+      text-decoration: underline;
+    }
+  }
+
+  // Bootstrap 3's .navbar-btn spacing.
+  .navbar-brand {
+    padding: 0;
+    margin: 8px 0;
+  }
+}
+
+.site-logo {
+  width: 100px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

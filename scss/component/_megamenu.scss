@@ -15,3 +15,54 @@
     }
   }
 }
+
+// Submenu lists use Bootstrap's .nav class, which is a wrapping flex row in
+// Bootstrap 5. Stack the links like Bootstrap 3 did.
+.we-mega-menu-submenu .nav {
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  // Bootstrap 3 made .nav > li > a a block; Bootstrap 5 only does that for
+  // .nav-link, which We Megamenu doesn't add.
+  & > li > a {
+    display: block;
+  }
+
+  // Bootstrap 5's .nav-tabs .dropdown-menu rule pulls items up 1px.
+  & > .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+// Bootstrap 5 pads .navbar and drops Bootstrap 3's bottom margin.
+.navbar-we-mega-menu {
+  padding: 0;
+  margin-bottom: 20px;
+
+  // Bootstrap 3's .navbar-default look.
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+}
+
+// We Megamenu sizes these in rem. Bootstrap 3's root font size was 10px and
+// Bootstrap 5's is 16px, so use the pixel sizes the menu had on Bootstrap 3.
+.navbar-we-mega-menu .we-mega-menu-ul {
+  & > .we-mega-menu-li > a,
+  & > .we-mega-menu-li > span {
+    padding: 11.25px 15.625px;
+  }
+
+  & > .dropdown-menu > a,
+  & > .dropdown-menu > span {
+    padding-right: 23.75px;
+  }
+
+  & > .dropdown-menu > a::before,
+  & > .dropdown-menu > a::after {
+    right: 9.375px;
+    margin-top: -3.125px;
+    width: 6.875px;
+    height: 6.875px;
+  }
+}

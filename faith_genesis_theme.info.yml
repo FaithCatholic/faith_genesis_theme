@@ -1,9 +1,9 @@
-core_version_requirement: ^8 || ^9 || ^10 || ^11
+core_version_requirement: ^10.1 || ^11
 type: theme
-base theme: bootstrap
+base theme: bootstrap5
 
 name: 'Faith Genesis'
-description: 'A bootstrap subtheme.'
+description: 'A Bootstrap 5 subtheme.'
 
 regions:
   navigation: 'Navigation'
@@ -23,3 +23,13 @@ regions:
 
 libraries:
   - faith_genesis_theme/framework
+
+libraries-override:
+  # css/style.css compiles Bootstrap 5 from the base theme's SCSS, so skip the
+  # base theme's precompiled copy.
+  bootstrap5/global-styling: false
+  # We Megamenu loads its own Bootstrap 5 from a CDN; the theme already has it.
+  we_megamenu/form.we-mega-menu-frontend:
+    css:
+      theme:
+        https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css: false

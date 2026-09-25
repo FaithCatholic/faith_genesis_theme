@@ -1,8 +1,11 @@
-// Default variables.
-@use "_default-variables";
+// Drupal and Bootstrap variable overrides. These load before the base theme,
+// whose variables use !default.
+@import 'variables_drupal';
+@import 'variables_bootstrap';
 
-// Bootstrap Framework.
-@use '../bootstrap/assets/stylesheets/bootstrap';
+// Bootstrap 5 and the bootstrap5 base theme's Drupal styles. The path is
+// relative to this theme in web/themes/contrib, next to bootstrap5.
+@import '../../bootstrap5/scss/style';
 
-// Base-theme overrides.
-@use 'overrides';
+// Theme overrides.
+@import 'overrides';

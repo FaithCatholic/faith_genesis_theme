@@ -1,5 +1,34 @@
-# Schema for the theme setting configuration file of the THEMETITLE theme.
+# Schema for the Faith Genesis theme settings. These are the bootstrap5 base
+# theme's settings, stored under this theme's name.
 
 faith_genesis_theme.settings:
   type: theme_settings
   label: 'Faith Genesis theme settings'
+  mapping:
+    b5_body_schema:
+      type: string
+      label: 'Body theme'
+    b5_body_bg_schema:
+      type: string
+      label: 'Body background'
+    b5_navbar_schema:
+      type: string
+      label: 'Navbar theme'
+    b5_navbar_bg_schema:
+      type: string
+      label: 'Navbar background'
+    b5_footer_schema:
+      type: string
+      label: 'Footer theme'
+    b5_footer_bg_schema:
+      type: string
+      label: 'Footer background'
+    b5_top_container:
+      type: string
+      label: 'Website container type'
+    b5_top_container_config:
+      type: string
+      label: 'Website container type configuration'
+    b5_theme_mode:
+      type: string
+      label: 'Theme mode'
