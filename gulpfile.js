@@ -30,10 +30,11 @@ gulp.task('sass', function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     // Bootstrap 5.3 still uses @import and older Sass functions; hide those
-    // deprecation warnings so real errors stand out.
+    // deprecation warnings so real errors stand out. quietDeps doesn't cover
+    // the base theme's Bootstrap, which is imported by relative path.
     .pipe(sass({
       quietDeps: true,
-      silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'mixed-decls', 'legacy-js-api'],
+      silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'legacy-js-api', 'if-function', 'abs-percent'],
     }).on('error', sass.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],

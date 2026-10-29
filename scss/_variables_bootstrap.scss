@@ -26,11 +26,13 @@ $paragraph-margin-bottom: 10px;
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Bootstrap 3 container widths (750/970/1170px at 768/992/1200px) and gutters.
+// No xxl width: the 1170px of xl carries on above 1400px, as on Bootstrap 3.
+// (Bootstrap requires each width to be larger than the last, so repeating
+// 1170px for xxl only causes a build warning.)
 $container-max-widths: (
   md: 750px,
   lg: 970px,
   xl: 1170px,
-  xxl: 1170px,
 );
 $grid-gutter-width: 30px;
 
